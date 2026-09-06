@@ -7,7 +7,7 @@ export const personalInfo = {
   mainHeading: "Building thoughtful software with code, AI & creativity.",
   badge: "Available for opportunities • 2026",
   email: "abhayverma0806@gmail.com",
-  phone: "+91 63870071761",
+  phone: "+91 6387007161",
   linkedIn: "http://www.linkedin.com/in/abhay-verma-a9367337a",
   github: "https://github.com/abhayverma0806",
   university: "Lovely Professional University",
