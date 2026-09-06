@@ -123,7 +123,8 @@ export const trainingData: Training = {
     "Logical Problem-Solving",
     "Practical Coding Implementation",
     "Data Structures & Algorithms"
-  ]
+  ],
+  certificateUrl: "/certificates/computer-programming-150h.pdf"
 };
 
 export const certificationsData: Certification[] = [

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BookOpen, Calendar, Clock, CheckCircle, Code } from 'lucide-react';
+import { BookOpen, Calendar, Clock, CheckCircle, Code, FileText, ExternalLink } from 'lucide-react';
 import { trainingData } from '../data/portfolioData';
 
 export const TrainingSection: React.FC = () => {
@@ -45,6 +45,18 @@ export const TrainingSection: React.FC = () => {
                 <Clock className="w-3.5 h-3.5" />
                 {trainingData.hours} Hours Completed
               </span>
+              {trainingData.certificateUrl && (
+                <a
+                  href={trainingData.certificateUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-black font-semibold transition text-xs shadow-md shadow-cyan-500/20"
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>View Certificate PDF</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
             </div>
           </div>
 

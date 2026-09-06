@@ -158,7 +158,9 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
                     <p className="text-slate-400">{achievementData.description}</p>
                   </div>
                   <div className="border-l-2 border-violet-500/50 pl-3 mt-2">
-                    <p className="font-bold text-white print:text-black">{trainingData.title} ({trainingData.hours} Hours)</p>
+                    <a href={trainingData.certificateUrl || '#'} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition hover:underline">
+                      <p className="font-bold text-white print:text-black">{trainingData.title} ({trainingData.hours} Hours) ↗</p>
+                    </a>
                     <p className="text-slate-400">{trainingData.period}</p>
                   </div>
                 </div>

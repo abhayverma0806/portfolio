@@ -59,4 +59,5 @@ export interface Training {
   period: string;
   hours: number;
   topics: string[];
+  certificateUrl?: string;
 }
