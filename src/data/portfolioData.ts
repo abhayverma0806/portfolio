@@ -131,25 +131,29 @@ export const certificationsData: Certification[] = [
     id: "nasa-remote-sensing",
     title: "Fundamentals of Remote Sensing",
     issuer: "NASA",
-    date: "August 2026"
+    date: "August 2026",
+    certificateUrl: "/certificates/nasa-remote-sensing.pdf"
   },
   {
     id: "infosys-cybersecurity",
     title: "Cyber Security",
     issuer: "Infosys Springboard",
-    date: "March 2026"
+    date: "March 2026",
+    certificateUrl: "/certificates/infosys-cybersecurity.pdf"
   },
   {
     id: "google-genai",
     title: "Generative AI Studio",
     issuer: "Simplilearn & Google Cloud",
-    date: "February 2026"
+    date: "February 2026",
+    certificateUrl: "/certificates/google-genai.pdf"
   },
   {
     id: "board-infinity-ds",
     title: "Data Science",
     issuer: "Board Infinity",
-    date: "January 2026"
+    date: "January 2026",
+    certificateUrl: "/certificates/board-infinity-ds.pdf"
   }
 ];
 

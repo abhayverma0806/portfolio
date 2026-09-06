@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Award, CheckCircle2, ShieldCheck, ExternalLink, FileText } from 'lucide-react';
 import { certificationsData } from '../data/portfolioData';
 
 export const Certifications: React.FC = () => {
@@ -20,13 +20,16 @@ export const Certifications: React.FC = () => {
         {/* Certifications Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certificationsData.map((cert, idx) => (
-            <motion.div
+            <motion.a
               key={cert.id}
+              href={cert.certificateUrl || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="p-6 rounded-2xl glass-card border border-white/10 hover:border-cyan-500/40 transition duration-300 flex flex-col justify-between group"
+              className="p-6 rounded-2xl glass-card border border-white/10 hover:border-cyan-500/40 transition duration-300 flex flex-col justify-between group cursor-pointer block"
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex items-center gap-3">
@@ -34,8 +37,9 @@ export const Certifications: React.FC = () => {
                     <ShieldCheck className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-display font-semibold text-lg text-white group-hover:text-cyan-300 transition">
-                      {cert.title}
+                    <h3 className="font-display font-semibold text-lg text-white group-hover:text-cyan-300 transition flex items-center gap-2">
+                      <span>{cert.title}</span>
+                      <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
                     </h3>
                     <p className="text-xs text-slate-400 font-medium">{cert.issuer}</p>
                   </div>
@@ -50,9 +54,11 @@ export const Certifications: React.FC = () => {
                 <span className="flex items-center gap-1.5 text-emerald-400 font-mono">
                   <CheckCircle2 className="w-3.5 h-3.5" /> Official Certification
                 </span>
-                <span className="text-slate-500 text-[11px]">Issued 2026</span>
+                <span className="text-cyan-400 font-mono flex items-center gap-1 group-hover:underline text-[11px]">
+                  <FileText className="w-3 h-3" /> View Certificate PDF ↗
+                </span>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
 

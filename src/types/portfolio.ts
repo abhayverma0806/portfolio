@@ -23,6 +23,7 @@ export interface Certification {
   title: string;
   issuer: string;
   date: string;
+  certificateUrl?: string;
   icon?: string;
 }
 

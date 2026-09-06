@@ -170,7 +170,9 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
                   {certificationsData.map((cert) => (
                     <li key={cert.id} className="flex items-center gap-2">
                       <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                      <span><strong>{cert.title}</strong> — {cert.issuer} ({cert.date})</span>
+                      <a href={cert.certificateUrl || '#'} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-300 transition underline-offset-2 hover:underline">
+                        <strong>{cert.title}</strong> — {cert.issuer} ({cert.date}) ↗
+                      </a>
                     </li>
                   ))}
                 </ul>
