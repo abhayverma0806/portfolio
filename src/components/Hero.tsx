@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, FileText, Mail, ExternalLink } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
-import { Terminal } from './Terminal';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 interface HeroProps {
@@ -110,10 +109,57 @@ export const Hero: React.FC<HeroProps> = () => {
 
           </motion.div>
 
-          {/* Right Hero Column — Developer Terminal */}
-          <div className="lg:col-span-5">
-            <Terminal />
-          </div>
+          {/* Right Hero Column — Profile Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-5 flex justify-center items-center"
+          >
+            <div className="relative flex flex-col items-center">
+
+              {/* Outer glow ring */}
+              <div className="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-cyan-500/30 via-violet-500/20 to-blue-500/30 blur-2xl animate-pulse" />
+
+              {/* Photo ring border */}
+              <div className="relative p-[3px] rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 shadow-[0_0_40px_rgba(6,182,212,0.4)]">
+                <div className="rounded-full overflow-hidden w-60 h-60 sm:w-72 sm:h-72 bg-slate-900">
+                  <img
+                    src="/abhay.png"
+                    alt="Abhay Verma"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+
+              {/* Floating badge — top right */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+                className="absolute -top-3 -right-4 sm:right-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-500/20 border border-cyan-500/40 backdrop-blur-md text-cyan-300 text-xs font-semibold shadow-lg"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                CSE · 9.12 CGPA
+              </motion.div>
+
+              {/* Floating badge — bottom left */}
+              <motion.div
+                animate={{ y: [0, 6, 0] }}
+                transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut', delay: 0.5 }}
+                className="absolute -bottom-3 -left-4 sm:left-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-violet-500/20 border border-violet-500/40 backdrop-blur-md text-violet-300 text-xs font-semibold shadow-lg"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+                AI · ML · Dev
+              </motion.div>
+
+              {/* Name card beneath photo */}
+              <div className="mt-6 text-center">
+                <p className="text-white font-bold text-lg font-display tracking-tight">{personalInfo.name}</p>
+                <p className="text-slate-400 text-sm font-mono mt-0.5">{personalInfo.role}</p>
+              </div>
+
+            </div>
+          </motion.div>
 
         </div>
       </div>
