@@ -37,16 +37,27 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navLink
 
         <div className="flex-1 px-6 py-8 flex flex-col justify-between overflow-y-auto">
           <nav className="flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={onClose}
-                className="text-xl font-medium text-slate-300 hover:text-cyan-400 transition py-2 border-b border-white/5"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.name === 'Contact' ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={onClose}
+                  className="text-xl font-semibold text-cyan-300 bg-cyan-500/15 border border-cyan-500/40 rounded-xl py-3 px-4 shadow-[0_0_12px_rgba(6,182,212,0.2)] hover:bg-cyan-500 hover:text-black transition"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={onClose}
+                  className="text-xl font-medium text-slate-300 hover:text-cyan-400 transition py-2 border-b border-white/5"
+                >
+                  {link.name}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="space-y-4 pt-6">

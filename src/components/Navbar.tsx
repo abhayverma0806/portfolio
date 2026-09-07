@@ -61,15 +61,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
 
             {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 bg-white/[0.03] border border-white/10 rounded-full px-4 py-1.5 backdrop-blur-md">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="px-3 py-1.5 text-xs lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition duration-200"
-                >
-                  {link.name}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.name === 'Contact' ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="px-3 py-1.5 text-xs lg:text-sm font-semibold text-cyan-300 bg-cyan-500/15 border border-cyan-500/50 rounded-full shadow-[0_0_10px_rgba(6,182,212,0.25)] hover:bg-cyan-500 hover:text-black hover:shadow-[0_0_18px_rgba(6,182,212,0.55)] transition duration-200"
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="px-3 py-1.5 text-xs lg:text-sm font-medium text-slate-300 hover:text-white hover:bg-white/10 rounded-full transition duration-200"
+                  >
+                    {link.name}
+                  </a>
+                )
+              )}
             </nav>
 
             {/* Actions: Download CV button & Hamburger */}
