@@ -6,10 +6,10 @@ import { Terminal } from './Terminal';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 interface HeroProps {
-  onOpenCv: () => void;
+  onOpenCv?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
+export const Hero: React.FC<HeroProps> = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-grid-mesh">
       
@@ -59,13 +59,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCv }) => {
                 <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition" />
               </a>
 
-              <button
-                onClick={onOpenCv}
+              <a
+                href="/Abhay_Verma_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Abhay_Verma_CV.pdf"
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 bg-white/[0.05] hover:bg-white/10 border border-white/15 backdrop-blur-md transition duration-200"
               >
                 <FileText className="w-4 h-4 text-cyan-400" />
                 <span>Download CV</span>
-              </button>
+              </a>
             </div>
 
             {/* Social Links Row */}

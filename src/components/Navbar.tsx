@@ -74,8 +74,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
 
             {/* Actions: Download CV button & Hamburger */}
             <div className="flex items-center gap-3">
-              <button
-                onClick={onOpenCv}
+              <a
+                href="/Abhay_Verma_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Abhay_Verma_CV.pdf"
                 className="relative group overflow-hidden rounded-full p-[1px] font-medium text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-600 rounded-full group-hover:opacity-100 transition opacity-80"></span>
@@ -83,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCv }) => {
                   <FileText className="w-3.5 h-3.5 text-cyan-400 group-hover:rotate-12 transition transform" />
                   <span>Download CV</span>
                 </span>
-              </button>
+              </a>
 
               <button
                 onClick={() => setMobileMenuOpen(true)}

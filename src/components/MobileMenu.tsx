@@ -8,10 +8,10 @@ interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
   navLinks: { name: string; href: string }[];
-  onOpenCv: () => void;
+  onOpenCv?: () => void;
 }
 
-export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navLinks, onOpenCv }) => {
+export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navLinks }) => {
   if (!isOpen) return null;
 
   return (
@@ -50,16 +50,17 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, navLink
           </nav>
 
           <div className="space-y-4 pt-6">
-            <button
-              onClick={() => {
-                onClose();
-                onOpenCv();
-              }}
+            <a
+              href="/Abhay_Verma_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download="Abhay_Verma_CV.pdf"
+              onClick={onClose}
               className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 font-semibold text-white shadow-lg shadow-cyan-500/25"
             >
               <FileText className="w-4 h-4" />
               Download CV
-            </button>
+            </a>
 
             <div className="flex items-center justify-center gap-6 pt-4 text-slate-400 text-xs font-mono">
               <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="hover:text-cyan-400 flex items-center gap-1">
